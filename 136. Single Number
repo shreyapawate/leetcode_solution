@@ -1,0 +1,13 @@
+class Solution {
+    public int singleNumber(int[] nums) {
+        int xor=0;
+        for(int i=0;i<nums.length;i++){
+            xor=xor^nums[i];
+        }
+        return xor;
+    }
+}
+
+A hash array only works efficiently when the values are small and non-negative; large values waste a lot of memory and negative values cannot be used as indices directly.
+
+For the Single Number problem, the XOR approach is better because it uses O(1) space and works for all integer values, including negatives.
