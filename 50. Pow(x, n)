@@ -1,0 +1,38 @@
+class Solution {
+    public double myPow(double x, int n) {
+        long binform=n;
+        double ans=1;
+        if(binform>0){
+             while(binform>0){
+            if(binform%2==1){
+                ans=ans*x;
+               
+            }
+             x=x*x;
+                binform=binform/2;
+        }
+
+           return ans;
+
+        }else{
+            binform=-binform;
+            while(binform>0){
+            if(binform%2==1){
+                ans=ans*x;
+               
+            }
+             x=x*x;
+                binform=binform/2;
+        }
+        return 1/ans;
+        }
+       
+        
+    }
+}
+
+Why it's optimal
+Time Complexity: O(log n) ✅
+You divide n by 2 in every iteration.
+Space Complexity: O(1) ✅
+Only a few variables are used.
