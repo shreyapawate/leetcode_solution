@@ -11,3 +11,52 @@ class Solution {
 A hash array only works efficiently when the values are small and non-negative; large values waste a lot of memory and negative values cannot be used as indices directly.
 
 For the Single Number problem, the XOR approach is better because it uses O(1) space and works for all integer values, including negatives.
+# 136. Single Number
+
+## Pattern
+Bit Manipulation (XOR)
+
+## Recognition
+- Every element appears twice except one.
+- Need O(n) time and O(1) space.
+- Duplicates need to cancel out.
+
+## Core Idea
+XOR has two important properties:
+- a ^ a = 0
+- a ^ 0 = a
+
+XOR all elements together. Duplicate numbers cancel each other, leaving the unique number.
+
+## Algorithm
+1. Initialize ans = 0.
+2. XOR every element with ans.
+3. Return ans.
+
+## Complexity
+Time: O(n)
+Space: O(1)
+
+## Template Insight
+Whenever:
+- Every element appears exactly twice except one.
+- Need constant space.
+
+Think XOR immediately.
+
+## Common Mistakes
+- Using HashMap/HashSet when O(1) space is required.
+- Forgetting XOR properties.
+- Confusing XOR (^) with power operation.
+
+## Similar Problems
+- 137. Single Number II
+- 260. Single Number III
+- Missing Number
+- Find XOR of Array
+
+## Revision (15 sec)
+- a ^ a = 0
+- a ^ 0 = a
+- XOR all elements.
+- Duplicates cancel, unique remains.
